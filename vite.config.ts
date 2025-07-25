@@ -26,7 +26,7 @@ export default defineConfig({
           },
         ],
       },
-      includeAssets: ["yacin-gym-logo.png", "success-sound.mp3"],
+      includeAssets: ["success-sound.mp3"],
       manifest: {
         name: "Amino Gym",
         short_name: "AminoGym",
@@ -38,18 +38,6 @@ export default defineConfig({
         scope: "/",
         start_url: "/",
         icons: [
-          {
-            src: "/yacin-gym-logo.png",
-            sizes: "192x192",
-            type: "image/png",
-            purpose: "any",
-          },
-          {
-            src: "/yacin-gym-logo.png",
-            sizes: "512x512",
-            type: "image/png",
-            purpose: "any",
-          },
           {
             src: "/yacin-gym-logo.png",
             sizes: "192x192",
