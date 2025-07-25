@@ -38,5 +38,6 @@
   ],
   "categories": ["fitness", "health", "sports"],
   "screenshots": [],
-  "prefer_related_applications": false
+  "prefer_related_applications": false,
+  "related_applications": []
 }
