@@ -11,7 +11,20 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       workbox: {
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,woff2}"],
+        globPatterns: ["**/*.{js,css,html,png,svg,woff2}"],
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/images\.unsplash\.com\/.*/i,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "unsplash-images",
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 30,
+              },
+            },
+          },
+        ],
       },
       includeAssets: ["yacin-gym-logo.png", "success-sound.mp3"],
       manifest: {
@@ -27,27 +40,9 @@ export default defineConfig({
         icons: [
           {
             src: "/yacin-gym-logo.png",
-            sizes: "512x512",
+            sizes: "192x192 512x512",
             type: "image/png",
-            purpose: "any",
-          },
-          {
-            src: "/yacin-gym-logo.png",
-            sizes: "192x192",
-            type: "image/png",
-            purpose: "any",
-          },
-          {
-            src: "/yacin-gym-logo.png",
-            sizes: "512x512",
-            type: "image/png",
-            purpose: "maskable",
-          },
-          {
-            src: "/yacin-gym-logo.png",
-            sizes: "192x192",
-            type: "image/png",
-            purpose: "maskable",
+            purpose: "any maskable",
           },
         ],
       },
